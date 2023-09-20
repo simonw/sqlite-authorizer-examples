@@ -1,6 +1,6 @@
 # SQLite authorizer examples
 
-SQLite has a mechanism for authorizing access to database objects using an authorizer callback function.
+SQLite has a mechanism for authorizing access to database objects using an authorizer callback function, [documented here](https://www.sqlite.org/c3ref/c_alter_table.html).
 
 This document demonstrates the different actions and arguments that are checked for different types of queries.
 
