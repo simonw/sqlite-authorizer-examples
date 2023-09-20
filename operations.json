@@ -1,0 +1,1910 @@
+{
+  "SQLITE_CREATE_INDEX": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT);\nINSERT INTO demo_table (name) VALUES ('Alice')",
+    "example_sql": "CREATE INDEX demo_index ON demo_table (name)",
+    "operations": [
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DENY",
+        "arg1": "demo_index",
+        "arg2": "demo_table",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "demo_table",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_REINDEX",
+        "arg1": "demo_index",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_CREATE_TABLE": {
+    "setup_sql": "",
+    "example_sql": "CREATE TABLE demo_table (name TEXT)",
+    "operations": [
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_IGNORE",
+        "arg1": "demo_table",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "ROWID",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_CREATE_TEMP_TABLE": {
+    "setup_sql": "",
+    "example_sql": "CREATE TEMP TABLE demo_table (name TEXT)",
+    "operations": [
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_temp_master",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_CREATE_TEMP_TABLE",
+        "arg1": "demo_table",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "type",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "tbl_name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "rootpage",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "sql",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "ROWID",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_CREATE_TEMP_TRIGGER": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT)",
+    "example_sql": "CREATE TEMP TRIGGER demo_trigger AFTER INSERT ON demo_table\n  BEGIN\n    INSERT INTO demo_table (name) VALUES ('Alice');\n  END",
+    "operations": [
+      {
+        "operation": "SQLITE_CREATE_TEMP_TRIGGER",
+        "arg1": "demo_trigger",
+        "arg2": "demo_table",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_temp_master",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_CREATE_TEMP_VIEW": {
+    "setup_sql": "",
+    "example_sql": "CREATE TEMP VIEW demo_view AS SELECT 1",
+    "operations": [
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_temp_master",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_CREATE_TEMP_VIEW",
+        "arg1": "demo_view",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "type",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "tbl_name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "rootpage",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "sql",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "ROWID",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_CREATE_TRIGGER": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT)",
+    "example_sql": "CREATE TRIGGER demo_trigger AFTER INSERT ON demo_table\n  BEGIN\n    INSERT INTO demo_table (name) VALUES ('Alice');\n  END",
+    "operations": [
+      {
+        "operation": "SQLITE_CREATE_TRIGGER",
+        "arg1": "demo_trigger",
+        "arg2": "demo_table",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_CREATE_VIEW": {
+    "setup_sql": "",
+    "example_sql": "CREATE VIEW demo_view AS SELECT 1",
+    "operations": [
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_CREATE_VIEW",
+        "arg1": "demo_view",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "ROWID",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_DELETE": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT);\nINSERT INTO demo_table (name) VALUES ('Alice')",
+    "example_sql": "DELETE FROM demo_table WHERE name='Alice'",
+    "operations": [
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "demo_table",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "demo_table",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_DROP_INDEX": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT);\nCREATE INDEX demo_index ON demo_table (name)",
+    "example_sql": "DROP INDEX demo_index",
+    "operations": [
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DROP_INDEX",
+        "arg1": "demo_index",
+        "arg2": "demo_table",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_DROP_TABLE": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT)",
+    "example_sql": "DROP TABLE demo_table",
+    "operations": [
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DROP_TABLE",
+        "arg1": "demo_table",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "demo_table",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_DROP_TEMP_TABLE": {
+    "setup_sql": "CREATE TEMP TABLE demo_table (name TEXT)",
+    "example_sql": "DROP TABLE demo_table",
+    "operations": [
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_temp_master",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DROP_TEMP_TABLE",
+        "arg1": "demo_table",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "demo_table",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_temp_master",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "tbl_name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "type",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "rootpage",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "rootpage",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_DROP_TEMP_TRIGGER": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT);\nCREATE TEMP TRIGGER demo_trigger AFTER INSERT ON demo_table\n  BEGIN\n    INSERT INTO demo_table (name) VALUES ('Alice');\n  END",
+    "example_sql": "DROP TRIGGER demo_trigger",
+    "operations": [
+      {
+        "operation": "SQLITE_DROP_TEMP_TRIGGER",
+        "arg1": "demo_trigger",
+        "arg2": "demo_table",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_temp_master",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_temp_master",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "type",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_DROP_TEMP_VIEW": {
+    "setup_sql": "CREATE TEMP VIEW demo_view AS SELECT 1",
+    "example_sql": "DROP VIEW demo_view",
+    "operations": [
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_temp_master",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DROP_TEMP_VIEW",
+        "arg1": "demo_view",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "demo_view",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_temp_master",
+        "arg2": null,
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "tbl_name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "type",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_DROP_TRIGGER": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT);\nCREATE TRIGGER demo_trigger AFTER INSERT ON demo_table\n  BEGIN\n    INSERT INTO demo_table (name) VALUES ('Alice');\n  END",
+    "example_sql": "DROP TRIGGER demo_trigger",
+    "operations": [
+      {
+        "operation": "SQLITE_DROP_TRIGGER",
+        "arg1": "demo_trigger",
+        "arg2": "demo_table",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_DROP_VIEW": {
+    "setup_sql": "CREATE VIEW demo_view AS SELECT 1",
+    "example_sql": "DROP VIEW demo_view",
+    "operations": [
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DROP_VIEW",
+        "arg1": "demo_view",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "demo_view",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_INSERT": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT)",
+    "example_sql": "INSERT INTO demo_table (name) VALUES ('Alice')",
+    "operations": [
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "demo_table",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_PRAGMA": {
+    "setup_sql": "",
+    "example_sql": "PRAGMA foreign_keys; PRAGMA foreign_keys = ON",
+    "operations": [
+      {
+        "operation": "SQLITE_PRAGMA",
+        "arg1": "foreign_keys",
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_PRAGMA",
+        "arg1": "foreign_keys",
+        "arg2": "ON",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_READ": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT);\nINSERT INTO demo_table (name) VALUES ('Alice')",
+    "example_sql": "SELECT name FROM demo_table",
+    "operations": [
+      {
+        "operation": "SQLITE_SELECT",
+        "arg1": null,
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "demo_table",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_SELECT": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT);\nINSERT INTO demo_table (name) VALUES ('Alice')",
+    "example_sql": "SELECT name FROM demo_table",
+    "operations": [
+      {
+        "operation": "SQLITE_SELECT",
+        "arg1": null,
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "demo_table",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_TRANSACTION": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT)",
+    "example_sql": "BEGIN TRANSACTION;\n  INSERT INTO demo_table (name) VALUES ('Alice');\nCOMMIT",
+    "operations": [
+      {
+        "operation": "SQLITE_TRANSACTION",
+        "arg1": "BEGIN",
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "demo_table",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_TRANSACTION",
+        "arg1": "COMMIT",
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_UPDATE": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT);\nINSERT INTO demo_table (name) VALUES ('Alice')",
+    "example_sql": "UPDATE demo_table SET name='Bob' WHERE name='Alice'",
+    "operations": [
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "demo_table",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "demo_table",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_ATTACH": {
+    "setup_sql": "",
+    "example_sql": "ATTACH DATABASE ':memory:' AS second",
+    "operations": [
+      {
+        "operation": "SQLITE_ATTACH",
+        "arg1": ":memory:",
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_DETACH": {
+    "setup_sql": "ATTACH DATABASE ':memory:' AS second",
+    "example_sql": "DETACH DATABASE second",
+    "operations": [
+      {
+        "operation": "SQLITE_DETACH",
+        "arg1": "second",
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_ALTER_TABLE": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT)",
+    "example_sql": "ALTER TABLE demo_table ADD COLUMN age INTEGER",
+    "operations": [
+      {
+        "operation": "SQLITE_ALTER_TABLE",
+        "arg1": "main",
+        "arg2": "demo_table",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "printf",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "substr",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "length",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "printf",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_REINDEX": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT);\nCREATE INDEX demo_index ON demo_table (name)",
+    "example_sql": "REINDEX demo_index",
+    "operations": [
+      {
+        "operation": "SQLITE_REINDEX",
+        "arg1": "demo_index",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_ANALYZE": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT);\nCREATE INDEX demo_index ON demo_table (name)",
+    "example_sql": "ANALYZE",
+    "operations": [
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_IGNORE",
+        "arg1": "sqlite_stat1",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "ROWID",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_ANALYZE",
+        "arg1": "demo_table",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_SELECT",
+        "arg1": null,
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_stat1",
+        "arg2": "tbl",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_stat1",
+        "arg2": "idx",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_stat1",
+        "arg2": "stat",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_CREATE_VTABLE": {
+    "setup_sql": "",
+    "example_sql": "CREATE VIRTUAL TABLE demo_table USING fts5(name)",
+    "operations": [
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_CREATE_VTABLE",
+        "arg1": "demo_table",
+        "arg2": "fts5",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "ROWID",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_IGNORE",
+        "arg1": "demo_table_data",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "ROWID",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_IGNORE",
+        "arg1": "demo_table_idx",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DENY",
+        "arg1": "sqlite_autoindex_demo_table_idx_1",
+        "arg2": "demo_table_idx",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "demo_table_idx",
+        "arg2": "segid",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "demo_table_idx",
+        "arg2": "term",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "ROWID",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "demo_table_data",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_IGNORE",
+        "arg1": "demo_table_content",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "ROWID",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_IGNORE",
+        "arg1": "demo_table_docsize",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "ROWID",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_IGNORE",
+        "arg1": "demo_table_config",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DENY",
+        "arg1": "sqlite_autoindex_demo_table_config_1",
+        "arg2": "demo_table_config",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "demo_table_config",
+        "arg2": "k",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "ROWID",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_INSERT",
+        "arg1": "demo_table_config",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_PRAGMA",
+        "arg1": "data_version",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_SELECT",
+        "arg1": null,
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "demo_table_config",
+        "arg2": "k",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "demo_table_config",
+        "arg2": "v",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_DROP_VTABLE": {
+    "setup_sql": "CREATE VIRTUAL TABLE demo_table USING fts5(name)",
+    "example_sql": "DROP TABLE demo_table",
+    "operations": [
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DROP_VTABLE",
+        "arg1": "demo_table",
+        "arg2": "fts5",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "demo_table",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DROP_TABLE",
+        "arg1": "demo_table_data",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "demo_table_data",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DROP_TABLE",
+        "arg1": "demo_table_idx",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "demo_table_idx",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DROP_TABLE",
+        "arg1": "demo_table_config",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "demo_table_config",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DROP_TABLE",
+        "arg1": "demo_table_docsize",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "demo_table_docsize",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DROP_TABLE",
+        "arg1": "demo_table_content",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "demo_table_content",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_DELETE",
+        "arg1": "sqlite_master",
+        "arg2": null,
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "rootpage",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_FUNCTION": {
+    "setup_sql": "",
+    "example_sql": "SELECT upper('Alice')",
+    "operations": [
+      {
+        "operation": "SQLITE_SELECT",
+        "arg1": null,
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "upper",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_SAVEPOINT": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT)",
+    "example_sql": "SAVEPOINT demo_savepoint",
+    "operations": [
+      {
+        "operation": "SQLITE_SAVEPOINT",
+        "arg1": "BEGIN",
+        "arg2": "demo_savepoint",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
+  "SQLITE_RECURSIVE": {
+    "setup_sql": "",
+    "example_sql": "WITH RECURSIVE counter(n) AS (\n  SELECT 1 UNION ALL\n  SELECT n+1 FROM counter WHERE n<5\n)\nSELECT n FROM counter;",
+    "operations": [
+      {
+        "operation": "SQLITE_SELECT",
+        "arg1": null,
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_SELECT",
+        "arg1": null,
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": "counter"
+      },
+      {
+        "operation": "SQLITE_RECURSIVE",
+        "arg1": null,
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": "counter"
+      },
+      {
+        "operation": "SQLITE_SELECT",
+        "arg1": null,
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": "counter"
+      },
+      {
+        "operation": "SQLITE_SELECT",
+        "arg1": null,
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": "counter"
+      }
+    ]
+  }
+}
