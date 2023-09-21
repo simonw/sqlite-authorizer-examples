@@ -1,13 +1,44 @@
 import json
 import sqlite3
 
+ACTIONS = {
+    "SQLITE_CREATE_INDEX",
+    "SQLITE_CREATE_TABLE",
+    "SQLITE_CREATE_TEMP_INDEX",
+    "SQLITE_CREATE_TEMP_TABLE",
+    "SQLITE_CREATE_TEMP_TRIGGER",
+    "SQLITE_CREATE_TEMP_VIEW",
+    "SQLITE_CREATE_TRIGGER",
+    "SQLITE_CREATE_VIEW",
+    "SQLITE_DELETE",
+    "SQLITE_DROP_INDEX",
+    "SQLITE_DROP_TABLE",
+    "SQLITE_DROP_TEMP_INDEX",
+    "SQLITE_DROP_TEMP_TABLE",
+    "SQLITE_DROP_TEMP_TRIGGER",
+    "SQLITE_DROP_TEMP_VIEW",
+    "SQLITE_DROP_TRIGGER",
+    "SQLITE_DROP_VIEW",
+    "SQLITE_INSERT",
+    "SQLITE_PRAGMA",
+    "SQLITE_READ",
+    "SQLITE_SELECT",
+    "SQLITE_TRANSACTION",
+    "SQLITE_UPDATE",
+    "SQLITE_ATTACH",
+    "SQLITE_DETACH",
+    "SQLITE_ALTER_TABLE",
+    "SQLITE_REINDEX",
+    "SQLITE_ANALYZE",
+    "SQLITE_CREATE_VTABLE",
+    "SQLITE_DROP_VTABLE",
+    "SQLITE_FUNCTION",
+    "SQLITE_SAVEPOINT",
+    "SQLITE_RECURSIVE",
+}
 
 # Define the CONSTANTS mapping
-CONSTANTS = {
-    getattr(sqlite3, c): c
-    for c in dir(sqlite3)
-    if c.startswith("SQLITE_") and isinstance(getattr(sqlite3, c), int)
-}
+CONSTANTS = {getattr(sqlite3, c): c for c in dir(sqlite3) if c in ACTIONS}
 
 # SQL setup and example queries for each operation
 sql_examples = {

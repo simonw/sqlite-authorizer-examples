@@ -11,7 +11,7 @@
         "innermost_trigger_or_view": null
       },
       {
-        "operation": "SQLITE_DENY",
+        "operation": "SQLITE_CREATE_INDEX",
         "arg1": "demo_index",
         "arg2": "demo_table",
         "dbname": "main",
@@ -52,7 +52,7 @@
         "innermost_trigger_or_view": null
       },
       {
-        "operation": "SQLITE_IGNORE",
+        "operation": "SQLITE_CREATE_TABLE",
         "arg1": "demo_table",
         "arg2": null,
         "dbname": "main",
@@ -973,7 +973,7 @@
         "innermost_trigger_or_view": null
       },
       {
-        "operation": "SQLITE_IGNORE",
+        "operation": "SQLITE_CREATE_TABLE",
         "arg1": "sqlite_stat1",
         "arg2": null,
         "dbname": "main",
@@ -1126,7 +1126,7 @@
         "innermost_trigger_or_view": null
       },
       {
-        "operation": "SQLITE_IGNORE",
+        "operation": "SQLITE_CREATE_TABLE",
         "arg1": "demo_table_data",
         "arg2": null,
         "dbname": "main",
@@ -1182,7 +1182,7 @@
         "innermost_trigger_or_view": null
       },
       {
-        "operation": "SQLITE_IGNORE",
+        "operation": "SQLITE_CREATE_TABLE",
         "arg1": "demo_table_idx",
         "arg2": null,
         "dbname": "main",
@@ -1196,7 +1196,7 @@
         "innermost_trigger_or_view": null
       },
       {
-        "operation": "SQLITE_DENY",
+        "operation": "SQLITE_CREATE_INDEX",
         "arg1": "sqlite_autoindex_demo_table_idx_1",
         "arg2": "demo_table_idx",
         "dbname": "main",
@@ -1280,7 +1280,7 @@
         "innermost_trigger_or_view": null
       },
       {
-        "operation": "SQLITE_IGNORE",
+        "operation": "SQLITE_CREATE_TABLE",
         "arg1": "demo_table_content",
         "arg2": null,
         "dbname": "main",
@@ -1336,7 +1336,7 @@
         "innermost_trigger_or_view": null
       },
       {
-        "operation": "SQLITE_IGNORE",
+        "operation": "SQLITE_CREATE_TABLE",
         "arg1": "demo_table_docsize",
         "arg2": null,
         "dbname": "main",
@@ -1392,7 +1392,7 @@
         "innermost_trigger_or_view": null
       },
       {
-        "operation": "SQLITE_IGNORE",
+        "operation": "SQLITE_CREATE_TABLE",
         "arg1": "demo_table_config",
         "arg2": null,
         "dbname": "main",
@@ -1406,7 +1406,7 @@
         "innermost_trigger_or_view": null
       },
       {
-        "operation": "SQLITE_DENY",
+        "operation": "SQLITE_CREATE_INDEX",
         "arg1": "sqlite_autoindex_demo_table_config_1",
         "arg2": "demo_table_config",
         "dbname": "main",

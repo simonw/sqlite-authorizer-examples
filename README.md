@@ -27,14 +27,11 @@ SQL:
 CREATE INDEX demo_index ON demo_table (name)
 ```
 
-This example did not trigger any SQLITE_CREATE_INDEX operations
-
-
 Operations:
 
 ```
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
-SQLITE_DENY	arg1="demo_index", arg2="demo_table", dbname="main"
+SQLITE_CREATE_INDEX	arg1="demo_index", arg2="demo_table", dbname="main"
 SQLITE_READ	arg1="demo_table", arg2="name", dbname="main"
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
 SQLITE_REINDEX	arg1="demo_index", dbname="main"
@@ -47,14 +44,11 @@ SQL:
 CREATE TABLE demo_table (name TEXT)
 ```
 
-This example did not trigger any SQLITE_CREATE_TABLE operations
-
-
 Operations:
 
 ```
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
-SQLITE_IGNORE	arg1="demo_table", dbname="main"
+SQLITE_CREATE_TABLE	arg1="demo_table", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="type", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="name", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="tbl_name", dbname="main"
@@ -571,7 +565,7 @@ Operations:
 
 ```
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
-SQLITE_IGNORE	arg1="sqlite_stat1", dbname="main"
+SQLITE_CREATE_TABLE	arg1="sqlite_stat1", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="type", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="name", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="tbl_name", dbname="main"
@@ -604,7 +598,7 @@ SQLITE_UPDATE	arg1="sqlite_master", arg2="rootpage", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="sql", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="ROWID", dbname="main"
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
-SQLITE_IGNORE	arg1="demo_table_data", dbname="main"
+SQLITE_CREATE_TABLE	arg1="demo_table_data", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="type", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="name", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="tbl_name", dbname="main"
@@ -612,9 +606,9 @@ SQLITE_UPDATE	arg1="sqlite_master", arg2="rootpage", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="sql", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="ROWID", dbname="main"
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
-SQLITE_IGNORE	arg1="demo_table_idx", dbname="main"
+SQLITE_CREATE_TABLE	arg1="demo_table_idx", dbname="main"
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
-SQLITE_DENY	arg1="sqlite_autoindex_demo_table_idx_1", arg2="demo_table_idx", dbname="main"
+SQLITE_CREATE_INDEX	arg1="sqlite_autoindex_demo_table_idx_1", arg2="demo_table_idx", dbname="main"
 SQLITE_READ	arg1="demo_table_idx", arg2="segid", dbname="main"
 SQLITE_READ	arg1="demo_table_idx", arg2="term", dbname="main"
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
@@ -626,7 +620,7 @@ SQLITE_UPDATE	arg1="sqlite_master", arg2="sql", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="ROWID", dbname="main"
 SQLITE_INSERT	arg1="demo_table_data", dbname="main"
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
-SQLITE_IGNORE	arg1="demo_table_content", dbname="main"
+SQLITE_CREATE_TABLE	arg1="demo_table_content", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="type", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="name", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="tbl_name", dbname="main"
@@ -634,7 +628,7 @@ SQLITE_UPDATE	arg1="sqlite_master", arg2="rootpage", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="sql", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="ROWID", dbname="main"
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
-SQLITE_IGNORE	arg1="demo_table_docsize", dbname="main"
+SQLITE_CREATE_TABLE	arg1="demo_table_docsize", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="type", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="name", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="tbl_name", dbname="main"
@@ -642,9 +636,9 @@ SQLITE_UPDATE	arg1="sqlite_master", arg2="rootpage", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="sql", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="ROWID", dbname="main"
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
-SQLITE_IGNORE	arg1="demo_table_config", dbname="main"
+SQLITE_CREATE_TABLE	arg1="demo_table_config", dbname="main"
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
-SQLITE_DENY	arg1="sqlite_autoindex_demo_table_config_1", arg2="demo_table_config", dbname="main"
+SQLITE_CREATE_INDEX	arg1="sqlite_autoindex_demo_table_config_1", arg2="demo_table_config", dbname="main"
 SQLITE_READ	arg1="demo_table_config", arg2="k", dbname="main"
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
 SQLITE_UPDATE	arg1="sqlite_master", arg2="type", dbname="main"
@@ -775,4 +769,3 @@ SQLITE_RECURSIVE	innermost_trigger_or_view="counter"
 SQLITE_SELECT	innermost_trigger_or_view="counter"
 SQLITE_SELECT	innermost_trigger_or_view="counter"
 ```
-
