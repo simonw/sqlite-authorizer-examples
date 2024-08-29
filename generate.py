@@ -186,7 +186,7 @@ operations = []
 by_operation = {}
 
 for operation, sql in sql_examples.items():
-    print("## " + operation + "\n")
+    print("### " + operation + "\n")
     conn = sqlite3.connect(":memory:")
     operations = []
     if sql["setup"]:
@@ -213,6 +213,14 @@ for operation, sql in sql_examples.items():
         print(f'{op["operation"]}\t{", ".join(args)}')
     conn.close()
     print("```\n")
+
+# Finally, output a table of operations and their codes
+print('## Operation constants\n')
+print('| ID | Operation |')
+print('| --- | --- |')
+for id, value in sorted(CONSTANTS.items()):
+    print(f'| {id} | {value} |')
+
 
 with open("operations.json", "w") as fp:
     json.dump(by_operation, fp, indent=2)

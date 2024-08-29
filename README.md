@@ -14,7 +14,7 @@ python generate.py > examples.md
 
 For each example a new in-memory database is created, the setup SQL is executed against it, then an authorizer callback is registered that logs the operations that are performed against the database while the main SQL is executed.
 
-## SQLITE_CREATE_INDEX
+### SQLITE_CREATE_INDEX
 
 Setup SQL:
 ```sql
@@ -37,7 +37,7 @@ SQLITE_INSERT	arg1="sqlite_master", dbname="main"
 SQLITE_REINDEX	arg1="demo_index", dbname="main"
 ```
 
-## SQLITE_CREATE_TABLE
+### SQLITE_CREATE_TABLE
 
 SQL:
 ```sql
@@ -57,7 +57,7 @@ SQLITE_UPDATE	arg1="sqlite_master", arg2="sql", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="ROWID", dbname="main"
 ```
 
-## SQLITE_CREATE_TEMP_TABLE
+### SQLITE_CREATE_TEMP_TABLE
 
 SQL:
 ```sql
@@ -77,7 +77,7 @@ SQLITE_UPDATE	arg1="sqlite_temp_master", arg2="sql", dbname="temp"
 SQLITE_READ	arg1="sqlite_temp_master", arg2="ROWID", dbname="temp"
 ```
 
-## SQLITE_CREATE_TEMP_TRIGGER
+### SQLITE_CREATE_TEMP_TRIGGER
 
 Setup SQL:
 ```sql
@@ -100,7 +100,7 @@ SQLITE_INSERT	arg1="sqlite_master", dbname="main"
 SQLITE_INSERT	arg1="sqlite_temp_master", dbname="temp"
 ```
 
-## SQLITE_CREATE_TEMP_VIEW
+### SQLITE_CREATE_TEMP_VIEW
 
 SQL:
 ```sql
@@ -120,7 +120,7 @@ SQLITE_UPDATE	arg1="sqlite_temp_master", arg2="sql", dbname="temp"
 SQLITE_READ	arg1="sqlite_temp_master", arg2="ROWID", dbname="temp"
 ```
 
-## SQLITE_CREATE_TRIGGER
+### SQLITE_CREATE_TRIGGER
 
 Setup SQL:
 ```sql
@@ -143,7 +143,7 @@ SQLITE_INSERT	arg1="sqlite_master", dbname="main"
 SQLITE_INSERT	arg1="sqlite_master", dbname="main"
 ```
 
-## SQLITE_CREATE_VIEW
+### SQLITE_CREATE_VIEW
 
 SQL:
 ```sql
@@ -163,7 +163,7 @@ SQLITE_UPDATE	arg1="sqlite_master", arg2="sql", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="ROWID", dbname="main"
 ```
 
-## SQLITE_DELETE
+### SQLITE_DELETE
 
 Setup SQL:
 ```sql
@@ -183,7 +183,7 @@ SQLITE_DELETE	arg1="demo_table", dbname="main"
 SQLITE_READ	arg1="demo_table", arg2="name", dbname="main"
 ```
 
-## SQLITE_DROP_INDEX
+### SQLITE_DROP_INDEX
 
 Setup SQL:
 ```sql
@@ -208,7 +208,7 @@ SQLITE_UPDATE	arg1="sqlite_master", arg2="rootpage", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="rootpage", dbname="main"
 ```
 
-## SQLITE_DROP_TABLE
+### SQLITE_DROP_TABLE
 
 Setup SQL:
 ```sql
@@ -233,7 +233,7 @@ SQLITE_UPDATE	arg1="sqlite_master", arg2="rootpage", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="rootpage", dbname="main"
 ```
 
-## SQLITE_DROP_TEMP_TABLE
+### SQLITE_DROP_TEMP_TABLE
 
 Setup SQL:
 ```sql
@@ -258,7 +258,7 @@ SQLITE_UPDATE	arg1="sqlite_temp_master", arg2="rootpage", dbname="temp"
 SQLITE_READ	arg1="sqlite_temp_master", arg2="rootpage", dbname="temp"
 ```
 
-## SQLITE_DROP_TEMP_TRIGGER
+### SQLITE_DROP_TEMP_TRIGGER
 
 Setup SQL:
 ```sql
@@ -284,7 +284,7 @@ SQLITE_READ	arg1="sqlite_temp_master", arg2="name", dbname="temp"
 SQLITE_READ	arg1="sqlite_temp_master", arg2="type", dbname="temp"
 ```
 
-## SQLITE_DROP_TEMP_VIEW
+### SQLITE_DROP_TEMP_VIEW
 
 Setup SQL:
 ```sql
@@ -307,7 +307,7 @@ SQLITE_READ	arg1="sqlite_temp_master", arg2="tbl_name", dbname="temp"
 SQLITE_READ	arg1="sqlite_temp_master", arg2="type", dbname="temp"
 ```
 
-## SQLITE_DROP_TRIGGER
+### SQLITE_DROP_TRIGGER
 
 Setup SQL:
 ```sql
@@ -333,7 +333,7 @@ SQLITE_READ	arg1="sqlite_master", arg2="name", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="type", dbname="main"
 ```
 
-## SQLITE_DROP_VIEW
+### SQLITE_DROP_VIEW
 
 Setup SQL:
 ```sql
@@ -356,7 +356,7 @@ SQLITE_READ	arg1="sqlite_master", arg2="tbl_name", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="type", dbname="main"
 ```
 
-## SQLITE_INSERT
+### SQLITE_INSERT
 
 Setup SQL:
 ```sql
@@ -374,7 +374,7 @@ Operations:
 SQLITE_INSERT	arg1="demo_table", dbname="main"
 ```
 
-## SQLITE_PRAGMA
+### SQLITE_PRAGMA
 
 SQL:
 ```sql
@@ -388,7 +388,7 @@ SQLITE_PRAGMA	arg1="foreign_keys"
 SQLITE_PRAGMA	arg1="foreign_keys", arg2="ON"
 ```
 
-## SQLITE_READ
+### SQLITE_READ
 
 Setup SQL:
 ```sql
@@ -408,7 +408,7 @@ SQLITE_SELECT
 SQLITE_READ	arg1="demo_table", arg2="name", dbname="main"
 ```
 
-## SQLITE_SELECT
+### SQLITE_SELECT
 
 Setup SQL:
 ```sql
@@ -428,7 +428,7 @@ SQLITE_SELECT
 SQLITE_READ	arg1="demo_table", arg2="name", dbname="main"
 ```
 
-## SQLITE_TRANSACTION
+### SQLITE_TRANSACTION
 
 Setup SQL:
 ```sql
@@ -450,7 +450,7 @@ SQLITE_INSERT	arg1="demo_table", dbname="main"
 SQLITE_TRANSACTION	arg1="COMMIT"
 ```
 
-## SQLITE_UPDATE
+### SQLITE_UPDATE
 
 Setup SQL:
 ```sql
@@ -470,7 +470,7 @@ SQLITE_UPDATE	arg1="demo_table", arg2="name", dbname="main"
 SQLITE_READ	arg1="demo_table", arg2="name", dbname="main"
 ```
 
-## SQLITE_ATTACH
+### SQLITE_ATTACH
 
 SQL:
 ```sql
@@ -483,7 +483,7 @@ Operations:
 SQLITE_ATTACH	arg1=":memory:"
 ```
 
-## SQLITE_DETACH
+### SQLITE_DETACH
 
 Setup SQL:
 ```sql
@@ -501,7 +501,7 @@ Operations:
 SQLITE_DETACH	arg1="second"
 ```
 
-## SQLITE_ALTER_TABLE
+### SQLITE_ALTER_TABLE
 
 Setup SQL:
 ```sql
@@ -529,7 +529,7 @@ SQLITE_READ	arg1="sqlite_master", arg2="type", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="name", dbname="main"
 ```
 
-## SQLITE_REINDEX
+### SQLITE_REINDEX
 
 Setup SQL:
 ```sql
@@ -548,7 +548,7 @@ Operations:
 SQLITE_REINDEX	arg1="demo_index", dbname="main"
 ```
 
-## SQLITE_ANALYZE
+### SQLITE_ANALYZE
 
 Setup SQL:
 ```sql
@@ -579,7 +579,7 @@ SQLITE_READ	arg1="sqlite_stat1", arg2="idx", dbname="main"
 SQLITE_READ	arg1="sqlite_stat1", arg2="stat", dbname="main"
 ```
 
-## SQLITE_CREATE_VTABLE
+### SQLITE_CREATE_VTABLE
 
 SQL:
 ```sql
@@ -654,7 +654,7 @@ SQLITE_READ	arg1="demo_table_config", arg2="k", dbname="main"
 SQLITE_READ	arg1="demo_table_config", arg2="v", dbname="main"
 ```
 
-## SQLITE_DROP_VTABLE
+### SQLITE_DROP_VTABLE
 
 Setup SQL:
 ```sql
@@ -717,7 +717,7 @@ SQLITE_UPDATE	arg1="sqlite_master", arg2="rootpage", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="rootpage", dbname="main"
 ```
 
-## SQLITE_FUNCTION
+### SQLITE_FUNCTION
 
 SQL:
 ```sql
@@ -731,7 +731,7 @@ SQLITE_SELECT
 SQLITE_FUNCTION	arg2="upper"
 ```
 
-## SQLITE_SAVEPOINT
+### SQLITE_SAVEPOINT
 
 Setup SQL:
 ```sql
@@ -749,7 +749,7 @@ Operations:
 SQLITE_SAVEPOINT	arg1="BEGIN", arg2="demo_savepoint"
 ```
 
-## SQLITE_RECURSIVE
+### SQLITE_RECURSIVE
 
 SQL:
 ```sql
@@ -769,3 +769,40 @@ SQLITE_RECURSIVE	innermost_trigger_or_view="counter"
 SQLITE_SELECT	innermost_trigger_or_view="counter"
 SQLITE_SELECT	innermost_trigger_or_view="counter"
 ```
+
+## Operation constants
+| ID | Operation |
+| --- | --- |
+| 1 | SQLITE_CREATE_INDEX |
+| 2 | SQLITE_CREATE_TABLE |
+| 3 | SQLITE_CREATE_TEMP_INDEX |
+| 4 | SQLITE_CREATE_TEMP_TABLE |
+| 5 | SQLITE_CREATE_TEMP_TRIGGER |
+| 6 | SQLITE_CREATE_TEMP_VIEW |
+| 7 | SQLITE_CREATE_TRIGGER |
+| 8 | SQLITE_CREATE_VIEW |
+| 9 | SQLITE_DELETE |
+| 10 | SQLITE_DROP_INDEX |
+| 11 | SQLITE_DROP_TABLE |
+| 12 | SQLITE_DROP_TEMP_INDEX |
+| 13 | SQLITE_DROP_TEMP_TABLE |
+| 14 | SQLITE_DROP_TEMP_TRIGGER |
+| 15 | SQLITE_DROP_TEMP_VIEW |
+| 16 | SQLITE_DROP_TRIGGER |
+| 17 | SQLITE_DROP_VIEW |
+| 18 | SQLITE_INSERT |
+| 19 | SQLITE_PRAGMA |
+| 20 | SQLITE_READ |
+| 21 | SQLITE_SELECT |
+| 22 | SQLITE_TRANSACTION |
+| 23 | SQLITE_UPDATE |
+| 24 | SQLITE_ATTACH |
+| 25 | SQLITE_DETACH |
+| 26 | SQLITE_ALTER_TABLE |
+| 27 | SQLITE_REINDEX |
+| 28 | SQLITE_ANALYZE |
+| 29 | SQLITE_CREATE_VTABLE |
+| 30 | SQLITE_DROP_VTABLE |
+| 31 | SQLITE_FUNCTION |
+| 32 | SQLITE_SAVEPOINT |
+| 33 | SQLITE_RECURSIVE |
