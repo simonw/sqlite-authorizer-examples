@@ -529,6 +529,70 @@ SQLITE_READ	arg1="sqlite_master", arg2="type", dbname="main"
 SQLITE_READ	arg1="sqlite_master", arg2="name", dbname="main"
 ```
 
+SQL:
+```sql
+ALTER TABLE demo_table RENAME TO new_table
+```
+
+Operations:
+
+```
+SQLITE_ALTER_TABLE	arg1="main", arg2="demo_table"
+SQLITE_FUNCTION	arg2="sqlite_rename_table"
+SQLITE_READ	arg1="sqlite_master", arg2="type", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="name", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="sql", dbname="main"
+SQLITE_UPDATE	arg1="sqlite_master", arg2="sql", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="type", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="tbl_name", dbname="main"
+SQLITE_FUNCTION	arg2="like"
+SQLITE_READ	arg1="sqlite_master", arg2="name", dbname="main"
+SQLITE_UPDATE	arg1="sqlite_master", arg2="tbl_name", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="type", dbname="main"
+SQLITE_FUNCTION	arg2="like"
+SQLITE_READ	arg1="sqlite_master", arg2="name", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="type", dbname="main"
+SQLITE_FUNCTION	arg2="substr"
+SQLITE_READ	arg1="sqlite_master", arg2="name", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="name", dbname="main"
+SQLITE_UPDATE	arg1="sqlite_master", arg2="name", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="tbl_name", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="type", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="type", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="type", dbname="main"
+SQLITE_FUNCTION	arg2="sqlite_rename_table"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="type", dbname="temp"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="name", dbname="temp"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="sql", dbname="temp"
+SQLITE_UPDATE	arg1="sqlite_temp_master", arg2="sql", dbname="temp"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="tbl_name", dbname="temp"
+SQLITE_FUNCTION	arg2="sqlite_rename_test"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="sql", dbname="temp"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="type", dbname="temp"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="name", dbname="temp"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="tbl_name", dbname="temp"
+SQLITE_UPDATE	arg1="sqlite_temp_master", arg2="tbl_name", dbname="temp"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="type", dbname="temp"
+SQLITE_SELECT	
+SQLITE_FUNCTION	arg2="like"
+SQLITE_READ	arg1="sqlite_master", arg2="name", dbname="main"
+SQLITE_FUNCTION	arg2="like"
+SQLITE_READ	arg1="sqlite_master", arg2="sql", dbname="main"
+SQLITE_FUNCTION	arg2="sqlite_rename_test"
+SQLITE_READ	arg1="sqlite_master", arg2="sql", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="type", dbname="main"
+SQLITE_READ	arg1="sqlite_master", arg2="name", dbname="main"
+SQLITE_SELECT	
+SQLITE_FUNCTION	arg2="like"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="name", dbname="temp"
+SQLITE_FUNCTION	arg2="like"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="sql", dbname="temp"
+SQLITE_FUNCTION	arg2="sqlite_rename_test"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="sql", dbname="temp"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="type", dbname="temp"
+SQLITE_READ	arg1="sqlite_temp_master", arg2="name", dbname="temp"
+```
+
 ### SQLITE_REINDEX
 
 Setup SQL:
@@ -771,6 +835,7 @@ SQLITE_SELECT	innermost_trigger_or_view="counter"
 ```
 
 ## Operation constants
+
 | ID | Operation |
 | --- | --- |
 | 1 | SQLITE_CREATE_INDEX |

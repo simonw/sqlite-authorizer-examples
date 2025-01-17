@@ -948,6 +948,390 @@
       }
     ]
   },
+  "SQLITE_ALTER_TABLE_1": {
+    "setup_sql": "CREATE TABLE demo_table (name TEXT)",
+    "example_sql": "ALTER TABLE demo_table RENAME TO new_table",
+    "operations": [
+      {
+        "operation": "SQLITE_ALTER_TABLE",
+        "arg1": "main",
+        "arg2": "demo_table",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "sqlite_rename_table",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "like",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "like",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "substr",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "tbl_name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "sqlite_rename_table",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "type",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "sql",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "sql",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "tbl_name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "sqlite_rename_test",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "sql",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "type",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "tbl_name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_UPDATE",
+        "arg1": "sqlite_temp_master",
+        "arg2": "tbl_name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "type",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_SELECT",
+        "arg1": null,
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "like",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "like",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "sqlite_rename_test",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "sql",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "type",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_master",
+        "arg2": "name",
+        "dbname": "main",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_SELECT",
+        "arg1": null,
+        "arg2": null,
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "like",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "like",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "sql",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_FUNCTION",
+        "arg1": null,
+        "arg2": "sqlite_rename_test",
+        "dbname": null,
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "sql",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "type",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      },
+      {
+        "operation": "SQLITE_READ",
+        "arg1": "sqlite_temp_master",
+        "arg2": "name",
+        "dbname": "temp",
+        "innermost_trigger_or_view": null
+      }
+    ]
+  },
   "SQLITE_REINDEX": {
     "setup_sql": "CREATE TABLE demo_table (name TEXT);\nCREATE INDEX demo_index ON demo_table (name)",
     "example_sql": "REINDEX demo_index",

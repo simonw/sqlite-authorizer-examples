@@ -132,7 +132,10 @@ sql_examples = {
     },
     "SQLITE_ALTER_TABLE": {
         "setup": "CREATE TABLE demo_table (name TEXT)",
-        "example": "ALTER TABLE demo_table ADD COLUMN age INTEGER",
+        "examples": [
+            "ALTER TABLE demo_table ADD COLUMN age INTEGER",
+            "ALTER TABLE demo_table RENAME TO new_table",
+        ],
     },
     "SQLITE_REINDEX": {
         "setup": "CREATE TABLE demo_table (name TEXT);\nCREATE INDEX demo_index ON demo_table (name)",
@@ -187,32 +190,42 @@ by_operation = {}
 
 for operation, sql in sql_examples.items():
     print("### " + operation + "\n")
-    conn = sqlite3.connect(":memory:")
-    operations = []
-    if sql["setup"]:
-        conn.executescript(sql["setup"])
-        print("Setup SQL:\n```sql\n" + sql["setup"] + "\n```\n")
-    conn.set_authorizer(authorizer_callback)
-    conn.executescript(sql["example"])
-    print("SQL:\n```sql\n" + sql["example"] + "\n```\n")
-    # At least one operation must have the expected name
-    if not any(o["operation"] == operation for o in operations):
-        print(f"This example did not trigger any {operation} operations\n\n")
-    by_operation[operation] = {
-        "setup_sql": sql["setup"],
-        "example_sql": sql["example"],
-        "operations": operations,
-    }
-    print("Operations:\n\n```")
-    for op in operations:
-        args = [
-            f'{key}="{value}"'
-            for key, value in op.items()
-            if value is not None and key != "operation"
-        ]
-        print(f'{op["operation"]}\t{", ".join(args)}')
-    conn.close()
-    print("```\n")
+    examples = []
+    if "example" in sql:
+        examples.append(sql["example"])
+    if "examples" in sql:
+        examples.extend(sql["examples"])
+    for i, example in enumerate(examples):
+        conn  = sqlite3.connect(":memory:")
+        operations = []
+        if sql["setup"]:
+            conn.executescript(sql["setup"])
+            if i == 0:
+                print("Setup SQL:\n```sql\n" + sql["setup"] + "\n```\n")
+        conn.set_authorizer(authorizer_callback)
+        conn.executescript(example)
+        print("SQL:\n```sql\n" + example + "\n```\n")
+        # At least one operation must have the expected name
+        if not any(o["operation"] == operation for o in operations):
+            print(f"This example did not trigger any {operation} operations\n\n")
+        op_key = operation
+        if i > 0:
+            op_key += '_' + str(i)
+        by_operation[op_key] = {
+            "setup_sql": sql["setup"],
+            "example_sql": example,
+            "operations": operations,
+        }
+        print("Operations:\n\n```")
+        for op in operations:
+            args = [
+                f'{key}="{value}"'
+                for key, value in op.items()
+                if value is not None and key != "operation"
+            ]
+            print(f'{op["operation"]}\t{", ".join(args)}')
+        conn.close()
+        print("```\n")
 
 # Finally, output a table of operations and their codes
 print('## Operation constants\n')
